@@ -1,30 +1,31 @@
-import { useState } from "react";
-import "./Card.scss"
+import React, { useState } from 'react';
+import './Card.scss';
+import Portion from './Portion/Portion';
 
-const Card = (props) => {
+const Card = (...{ portionCount, mouseCount, weight }) => {
   const [active, setActive] = useState(false);
   const [leave, setLeave] = useState(false);
 
   const toggleActive = () => {
-    active ? setActive(false) : setActive(true)
-  }
+    setActive(!active);
+  };
   const mouseEnter = () => {
-    setLeave(false)
-  }
+    setLeave(false);
+  };
   const mouseLeave = () => {
-    setLeave(true)
-  }
+    setLeave(true);
+  };
 
   return (
-    <div className={`card ${active ? 'card--active': ''} ${leave ? 'card--leave' : ''}`}>
-      <div 
-        className="card__header" 
+    <div className={`card ${active ? 'card--active' : ''} ${leave ? 'card--leave' : ''}`}>
+      <div
+        className="card__header"
         onClick={toggleActive}
         onMouseEnter={mouseEnter}
         onMouseLeave={mouseLeave}
       >{active && leave ? 'Котэ не одобряет?' : 'Сказочное заморское яство'}</div>
-      <div 
-        className="card__content" 
+      <div
+        className="card__content"
         onClick={toggleActive}
         onMouseEnter={mouseEnter}
         onMouseLeave={mouseLeave}
@@ -33,28 +34,23 @@ const Card = (props) => {
           Нямушка<br/>
           <span className="card__title--little">с фуа-гра</span>
         </h2>
-
-        <p className="card__text">
-          <span className="card__text--portion-count">{props.portion + ' '}</span> 
-          порций
-        </p>
-        <p className="card__text">мышь в подарок</p>
+        <Portion portionCount={portionCount} mouseCount={mouseCount}/>
         <div className="card__weight">
-          <span className="card__weight--count">{props.weight}</span>
+          <span className="card__weight--count">{weight}</span>
           <br />
           кг
         </div>
       </div>
-      <div className="card__buy">Чего сидишь? Порадуй котэ, 
-        <button 
-          className="card__botton-buy" 
+      <div className="card__buy">Чего сидишь? Порадуй котэ,
+        <button
+          className="card__botton-buy"
           onClick={toggleActive}
           onMouseEnter={mouseEnter}
           onMouseLeave={mouseLeave}
-        > купи</button>
+        >купи</button>
       .
       </div>
     </div>
-  )
-}
-export default Card
+  );
+};
+export default Card;

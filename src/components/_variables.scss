@@ -1,10 +1,13 @@
-$primary-text-color: #000000;
-$secondaty-text-color: #666666;
-$default-color: #FFFFFF;
-$accent-color: #1698D9;
-$active-color: #D91667;
-$disable-color: #B3B3B3;
-
 :root {
-  --card-theme: #1698D9;
+  --primary-text-color: #000000;
+  --secondaty-text-color: #666666;
+  --default-color: #FFFFFF;
+
+  --accent-color: #1698D9;
+  --accent-color-leave: #2EA8E6;
+  --active-color: #D91667;
+  --active-color-leave: #E52E7A;
+  --disable-color: #B3B3B3;
+
+  --card-theme: var(--accent-color);
 }

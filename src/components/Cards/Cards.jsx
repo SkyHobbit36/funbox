@@ -1,13 +1,16 @@
 import './Cards.scss';
 import Card from './Card/Card';
+import { React } from 'react';
 
 // const initialState = [
 //   {
 //     title: 'Нямушка',
 //     titleAdd: 'с фуа-гра',
-//     composition:'состав',
+//     composition: 'Печень утки разварная с артишоками.',
+//     portion: '10',
+//     weight: '0,5'
 //   }
-// ]
+// ];
 
 function Cards() {
   return (

@@ -1,4 +1,4 @@
-@import '../../variables';
+// @import '../../variables';
 
 $borderWidth: 4px;
 
@@ -15,15 +15,19 @@ $borderWidth: 4px;
   cursor: pointer;
 
   &--leave {
-    --card-theme: #2EA8E6;
+    --card-theme: var(--accent-color-leave);
   }
 
   &--active {
-    --card-theme: #D91667;
+    --card-theme: var(--active-color);
   }
 
   &--active.card--leave {
-    --card-theme: #E52E7A;
+    --card-theme: var(--active-color-leave);
+
+    & .card__header {
+      color: var(--active-color);
+    }
   }
 
   &::before {
@@ -34,14 +38,14 @@ $borderWidth: 4px;
     left: -2px;
     z-index: -1;
     transform: rotate(-43deg);
-    background: $default-color;
+    background: var(--default-color);
     width: 58px;
     height: 40px;
   }
 
   &__header {
     width: calc(100% - 36px);
-    background: $default-color;
+    background: var(--default-color);
     border-color: inherit;
     border-style: solid;
     border-width: $borderWidth $borderWidth 0 0;
@@ -63,7 +67,7 @@ $borderWidth: 4px;
       top: 19px;
       left: -13px;
       transform: rotate(-43deg);
-      background-color: $default-color;
+      background-color: var(--default-color);
       width: 58px;
       height: 0px;
       border-color: inherit;
@@ -76,8 +80,8 @@ $borderWidth: 4px;
     width: calc(100% + $borderWidth*2);
     position: relative;
     box-sizing: border-box;
-    padding: 0 46px;
-    background-color: $default-color;
+    padding-left: 46px;
+    background-color: var(--default-color);
     border-color: inherit;
     border-style: solid;
     border-width: 0 $borderWidth $borderWidth $borderWidth;
@@ -88,7 +92,7 @@ $borderWidth: 4px;
   }
 
   &__title {
-    color: $primary-text-color;
+    color: var(--primary-text-color);
     font-weight: 700;
     font-size: 48px;
     line-height: 33px;
@@ -103,7 +107,7 @@ $borderWidth: 4px;
   }
 
   &__text {
-    color: $secondaty-text-color;
+    color: var(--secondaty-text-color);
     margin: 0;
     font-weight: 400;
     font-size: 14px;
@@ -122,11 +126,10 @@ $borderWidth: 4px;
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    // padding-top: 14px;
     font-weight: 400;
     font-size: 13px;
     line-height: 15px;
-    color: $default-color;
+    color: var(--default-color);
     cursor: auto;
   }
 
@@ -151,7 +154,7 @@ $borderWidth: 4px;
     bottom: 12px;
     right: 12px;
     background-color: var(--card-theme);
-    color: $default-color;
+    color: var(--default-color);
     border-radius: 50%;
     display: flex;
     flex-direction: column;
