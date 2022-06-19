@@ -5,6 +5,7 @@ import Card from './Card/Card';
 //   {
 //     title: 'Нямушка',
 //     titleAdd: 'с фуа-гра',
+//     composition:'состав',
 //   }
 // ]
 
