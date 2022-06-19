@@ -5,8 +5,7 @@
     },
     "extends": [
         "eslint:recommended",
-        "plugin:react/recommended",
-        "airbnb-base/legacy"
+        "plugin:react/recommended"
     ],
     "parserOptions": {
         "ecmaFeatures": {
