@@ -4,6 +4,7 @@ import { React } from 'react';
 
 const initialState = [
   {
+    disabled: 'false',
     title: 'Нямушка',
     titleAdd: 'с рыбой',
     composition: 'Головы щучьи с чесноком да свежайшая сёмгушка.',
@@ -15,6 +16,7 @@ const initialState = [
     textAdd: ''
   },
   {
+    disabled: 'true',
     title: 'Нямушка',
     titleAdd: 'с фуа-гра',
     composition: 'Печень утки разварная с артишоками.',
@@ -26,6 +28,7 @@ const initialState = [
     textAdd: ''
   },
   {
+    disabled: 'false',
     title: 'Нямушка',
     titleAdd: 'с курой',
     composition: 'Печень утки разварная с артишоками.',
@@ -41,30 +44,18 @@ const initialState = [
 const Cards = () => {
   return (
     <div className="cards">
-      {initialState.map((item, i) => {
-        const {
-          title,
-          titleAdd,
-          composition,
-          portionCount,
-          portionText,
-          mouseCount,
-          mouseText,
-          weight,
-          textAdd
-        } = item;
-        return <Card
-          title={title}
-          titleAdd={titleAdd}
-          composition={composition}
-          portionCount={portionCount}
-          portionText={portionText}
-          mouseCount={mouseCount}
-          mouseText={mouseText}
-          weight={weight}
-          textAdd={textAdd}
-          key={i}/>;
-      })}
+      {initialState.map((item, i) => <Card
+        disabled={item.disabled}
+        title={item.title}
+        titleAdd={item.titleAdd}
+        composition={item.composition}
+        portionCount={item.portionCount}
+        portionText={item.portionText}
+        mouseCount={item.mouseCount}
+        mouseText={item.mouseText}
+        weight={item.weight}
+        textAdd={item.textAdd}
+        key={i}/>)}
     </div>
   );
 };
