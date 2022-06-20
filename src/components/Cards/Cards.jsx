@@ -6,11 +6,11 @@ const initialState = [
   {
     disabled: 'false',
     title: 'Нямушка',
-    titleAdd: 'с рыбой',
+    titleAdd: 'с фуа-гра',
     composition: 'Головы щучьи с чесноком да свежайшая сёмгушка.',
     portionCount: '10',
     portionText: 'порций',
-    weight: '2',
+    weight: '0,5',
     mouseCount: '',
     mouseText: 'мышь в подарок',
     textAdd: ''
@@ -18,11 +18,11 @@ const initialState = [
   {
     disabled: 'true',
     title: 'Нямушка',
-    titleAdd: 'с фуа-гра',
+    titleAdd: 'с рыбой',
     composition: 'Печень утки разварная с артишоками.',
     portionCount: '40',
     portionText: 'порций',
-    weight: '0,5',
+    weight: '2',
     mouseCount: '2',
     mouseText: 'мыши в подарок',
     textAdd: ''

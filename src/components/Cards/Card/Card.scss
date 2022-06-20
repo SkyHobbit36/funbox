@@ -1,18 +1,11 @@
-// @import '../../variables';
-
 $borderWidth: 4px;
 
 .card {
-  width: 312px;
-  min-height: 520px;
+
   border-color: var(--card-theme);
-  display: grid;
-  grid-template-rows: 40px 1fr auto;
-  justify-items: end;
   z-index: 0;
   border-radius: 15px;
   position: relative;
-  cursor: pointer;
 
   &--leave {
     --card-theme: var(--accent-color-leave);
@@ -35,31 +28,30 @@ $borderWidth: 4px;
   }
 
   &--disable .card__title,
-  &--disable .card__header,
+  &--disable .card__header-text,
   &--disable .card__text {
-    color: var(--disable-color);
+    color: var(--disable-text-color);
   }
 
-  &--disable .card__content {
-    filter: contrast(0.3) brightness(1.3);
+  &--disable .card__image {
+    opacity: 0.5;
   }
 
-  &::before {
-    content: "";
-    display: block;
-    position: absolute;
-    top: 17px;
-    left: -2px;
-    z-index: -1;
-    transform: rotate(-43deg);
-    background: var(--default-color);
-    width: 58px;
-    height: 40px;
+  &__content {
+    width: 320px;
+    min-height: 480px;
+    display: grid;
+    grid-template-rows: 40px 1fr;
+    justify-items: end;
+    // width: calc(100% + $borderWidth*2);
+    position: relative;
+    border-color: inherit;
+    cursor: pointer;
   }
 
   &__header {
-    width: calc(100% - 36px);
-    background: var(--default-color);
+    width: calc(100% - 40px);
+    background: var(--card-bg-color);
     border-color: inherit;
     border-style: solid;
     border-width: $borderWidth $borderWidth 0 0;
@@ -67,42 +59,63 @@ $borderWidth: 4px;
     overflow: hidden;
     box-sizing: border-box;
     padding-top: 18px;
-    padding-left: 7px;
+    padding-left: 10px;
 
     &--angry-cat {
       color: #E62E7A;
     }
 
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 16px;
+      left: 5px;
+      z-index: -1;
+      transform: rotate(-46deg);
+      background: var(--card-bg-color);
+      width: 58px;
+      height: 40px;
+    }
+
     &::after {
-      z-index: 1;
       content: "";
       display: block;
       position: absolute;
       top: 19px;
-      left: -13px;
-      transform: rotate(-43deg);
-      background-color: var(--default-color);
-      width: 58px;
+      left: -6px;
+      transform: rotate(-45deg);
+      width: 57px;
       height: 0px;
       border-color: inherit;
       border-style: solid;
-      border-width: $borderWidth 0 0 0;
+      border-width: 4px 0 0 0;
     }
   }
 
-  &__content {
-    width: calc(100% + $borderWidth*2);
-    position: relative;
-    box-sizing: border-box;
-    padding-left: 46px;
-    background-color: var(--default-color);
+  &__header-text {
+    margin: 0;
+    color: var(--secondaty-text-color);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+  }
+
+  &__main {
+    width: 100%;
+    overflow: hidden;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    background-color: var(--card-bg-color);
     border-color: inherit;
     border-style: solid;
     border-width: 0 $borderWidth $borderWidth $borderWidth;
     border-radius: 0 0 10px 10px;
-    background-image: url('../../../assets/cat.jpg');
-    background-repeat: no-repeat;
-    background-position: bottom;
+    box-sizing: border-box;
+  }
+
+  &__properties {
+    padding-left: 46px;
   }
 
   &__title {
@@ -132,11 +145,12 @@ $borderWidth: 4px;
     }
   }
 
+  &__image {
+    width: 100%;
+  }
+
   &__buy {
-    width: calc(100% + 8px);
-    height: 40px;
-    box-sizing: border-box;
-    margin-left: -4px;
+    height: 43px;
     justify-self: center;
     display: flex;
     justify-content: center;
@@ -169,8 +183,8 @@ $borderWidth: 4px;
     width: 80px;
     height: 80px;
     position: absolute;
-    bottom: 12px;
-    right: 12px;
+    bottom: 16px;
+    right: 16px;
     background-color: var(--card-theme);
     color: var(--default-color);
     border-radius: 50%;
