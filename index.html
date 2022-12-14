@@ -11,7 +11,10 @@
     gtag('config', 'G-WPSVBE29PJ',{ 'debug_mode':true });
     
     document.querySelector('.card).addEventListener('click', () => {
-      gtag('event', 'CARD_CLICK');
+      gtag('event', 'aaa', {
+        'event_category' : 'bbb',
+        'event_label' : 'ccc'
+      });
     })
   </script>
   
