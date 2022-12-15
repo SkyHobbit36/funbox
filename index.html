@@ -9,16 +9,15 @@
     gtag('js', new Date());
 
     gtag('config', 'G-WPSVBE29PJ',{ 'debug_mode':true });
+    
+//     document.querySelector('#main_btn').addEventListener('click', () => {
+//       gtag('event', 'CARD_CLICK');
+//       console.log('CARD_CLICK');
+//     })
   </script>
   
  
   </head><body><div id="root"></div>
-  <button id="main_btn">Click</button>
+  <button id="main_btn" onClick="gtag('event', 'CARD_CLICK')">Click</button>
 </body>
-<srcipt>
-    document.querySelector('#main_btn').addEventListener('click', () => {
-      gtag('event', 'CARD_CLICK');
-      console.log('CARD_CLICK');
-    })
-  </script>
 </html>
